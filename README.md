@@ -1,17 +1,4 @@
-
-(.venv) @Venkatasaikumarkethala ➜ /workspaces/Midterm (main) $ python3 main.py repl
-2025-03-13 18:46:10,422 - root - INFO - Environment mode: Unknown
-2025-03-13 18:46:10,422 - root - INFO - Calculator Application Launched.
-2025-03-13 18:46:10,422 - root - INFO - Running: main
-2025-03-13 18:46:10,423 - root - INFO - Plugin loaded: subtract_command
-2025-03-13 18:46:10,423 - root - INFO - Plugin loaded: divide_command
-2025-03-13 18:46:10,423 - root - INFO - Plugin loaded: add_command
-2025-03-13 18:46:10,424 - root - INFO - Plugin loaded: multiply_command
-2025-03-13 18:46:10,424 - root - INFO - Running: start_repl
-Calculator REPL started. Type 'exit' to quit.
-Append 'mp' at the end of a command to use multiprocessing.
-
-# Advanced Python Calculator
+# Advanced Python Calculator - midterm project
 
 An interactive, plugin-based Python calculator designed for flexibility, extensibility, and high code quality. It supports arithmetic and statistical operations, maintains a history, and includes logging and multiprocessing support.
 
