@@ -105,7 +105,7 @@ def process_calculation_and_output(operand1, operand2, operation_key, commands, 
 
         # Save the calculation
         calc = Calculation(num1, num2, operation)
-        calc_result = calc.execute()
+        calc_result = calc.operate()
         Calculations.add_calculation(calc)
         logging.debug("Calculation added to history.")
 
