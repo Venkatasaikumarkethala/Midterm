@@ -8,7 +8,7 @@ from app.plugins.subtract_command import SubtractCommand
 from app.plugins.multiply_command import MultiplyCommand
 from app.plugins.divide_command import DivideCommand
 from app.plugins.mean_command import MeanCommand
-from app.plugins.standard_deviation_command import StandardDeviationCommand
+from app.plugins.standard_deviation_command import Standard_deviationCommand
 
 # ---------- AddCommand Tests ----------
 
@@ -114,7 +114,7 @@ def test_mean_command_multiprocessing():
 # ---------- StandardDeviationCommand Tests ----------
 
 def test_standard_deviation_command():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result = command.execute(Decimal(10), Decimal(20))
 
     # Manual calculation
@@ -123,18 +123,18 @@ def test_standard_deviation_command():
     assert result == Decimal(5)
 
 def test_standard_deviation_command_identical_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result = command.execute(Decimal(10), Decimal(10))
     assert result == Decimal(0)
 
 def test_standard_deviation_command_multiprocessing():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result_queue = Queue()
     command.execute_multiprocessing(Decimal(10), Decimal(20), result_queue)
     assert result_queue.get() == Decimal(5)
 
 def test_standard_deviation_command_multiprocessing_with_identical_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result_queue = Queue()
     command.execute_multiprocessing(Decimal(7), Decimal(7), result_queue)
     assert result_queue.get() == Decimal(0)
@@ -175,7 +175,7 @@ def test_mean_command_multiprocessing_with_large_numbers():
 # ---------- Additional StandardDeviationCommand Tests ----------
 
 def test_standard_deviation_command_with_large_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result = command.execute(Decimal('1000000000000000000'), Decimal('2000000000000000000'))
     
     # mean = 1.5e+18, variance = ((1e+18 - 1.5e+18)^2 + (2e+18 - 1.5e+18)^2) / 2
@@ -184,7 +184,7 @@ def test_standard_deviation_command_with_large_numbers():
     assert result == Decimal('500000000000000000')
 
 def test_standard_deviation_command_with_negative_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result = command.execute(Decimal(-10), Decimal(-30))
     
     # mean = -20, variance = ((-10 + 20)^2 + (-30 + 20)^2)/2 = (100 + 100)/2 = 100
@@ -192,7 +192,7 @@ def test_standard_deviation_command_with_negative_numbers():
     assert result == Decimal(10)
 
 def test_standard_deviation_command_with_zero_and_number():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result = command.execute(Decimal(0), Decimal(50))
     
     # mean = 25, variance = ((0 - 25)^2 + (50 - 25)^2)/2 = (625 + 625)/2 = 625
@@ -201,19 +201,19 @@ def test_standard_deviation_command_with_zero_and_number():
 
 
 def test_standard_deviation_command_multiprocessing_with_large_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result_queue = Queue()
     command.execute_multiprocessing(Decimal('1000000000000000000'), Decimal('2000000000000000000'), result_queue)
     assert result_queue.get() == Decimal('500000000000000000')
 
 def test_standard_deviation_command_multiprocessing_with_zero_and_number():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result_queue = Queue()
     command.execute_multiprocessing(Decimal(0), Decimal(50), result_queue)
     assert result_queue.get() == Decimal(25)
 
 def test_standard_deviation_command_with_opposite_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result = command.execute(Decimal(-100), Decimal(100))
     
     # mean = 0
@@ -222,7 +222,7 @@ def test_standard_deviation_command_with_opposite_numbers():
     assert result == Decimal(100)
 
 def test_standard_deviation_command_multiprocessing_with_opposite_numbers():
-    command = StandardDeviationCommand()
+    command = Standard_deviationCommand()
     result_queue = Queue()
     command.execute_multiprocessing(Decimal(-100), Decimal(100), result_queue)
     assert result_queue.get() == Decimal(100)
