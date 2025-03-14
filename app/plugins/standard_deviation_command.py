@@ -6,7 +6,7 @@ from decimal import Decimal
 from app.command import Command
 import math
 
-class StandardDeviationCommand(Command):
+class Standard_deviationCommand(Command):
     """
     Command to calculate the standard deviation of two decimal numbers.
     """
