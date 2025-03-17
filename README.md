@@ -171,8 +171,12 @@ Venkatasaikumarkethala
 ---
 
 ## 📺 Video Demo
+Watch the video demonstration of the calculator in action:
 
+[Watch the Demo](https://drive.google.com/file/d/1doSD3z-qxbzWtlyw_4KMsXNnXKPvlv1a/view?usp=sharing)
 
+---
+---
 ---
 
 ## 📜 License
